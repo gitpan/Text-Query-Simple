@@ -1,0 +1,8 @@
+Revision history for Perl extension Text::Query::Simple.
+
+0.01  Mon Nov 16 23:06:20 1998
+	- original version; created by h2xs 1.18
+
+0.02  Mon Dec 28 03046:00 1998
+        - improved matching efficiency; allowed weighting
+

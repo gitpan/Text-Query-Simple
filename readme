@@ -1,0 +1,53 @@
+NAME
+    Text::Query::Simple - Match text against simple query expression
+    and return relevance value for ranking
+
+SYNOPSIS
+        use Text::Query::Simple;
+        
+        # Constructor
+        $query = Text::Query::Simple->new([QSTRING] [OPTIONS]);
+
+        # Methods
+        $query->prepare(QSTRING [OPTIONS]);
+        $query->match([TARGET] [OPTIONS]);
+
+DESCRIPTION
+    This module provides an object that tests a string or list of
+    strings against a query expression similar to an AltaVista
+    "simple query" and returns a "relevance value." Elements of the
+    query expression may be regular expressions or literal text.
+
+    Query expressions are compiled into an internal form when a new
+    object is created or the `prepare' method is called; they are
+    not recompiled on each match.
+
+    Query expressions consist of words (sequences of non-
+    whitespace), regexps or phrases (quoted strings) separated by
+    whitespace. Words or phrases prefixed with a `+' must be present
+    for the expression to match; words or phrases prefixed with a `-
+    ' must be absent for the expression to match.
+
+    A successful match returns a count of the number of times any of
+    the words (except ones prefixed with `-') appeared in the text.
+    This type of result is useful for ranking documents according to
+    relevance.
+
+    A word or phrase may be followed by a number in parentheses; this 
+    specifies a weight to be given it.
+
+INSTALLATION
+    This module is pure Perl, so you can simply copy it into the 
+    appropriate directory.
+
+AUTHOR
+    Eric Bohlman (ebohlman@netcom.com)
+
+    The parse_tokens routine was adapted from the parse_line routine
+    in Text::Parsewords.
+
+COPYRIGHT
+    Copyright (c) 1998 Eric Bohlman. All rights reserved. This
+    program is free software; you can redistribute it and/or modify
+    it under the same terms as Perl itself. =cut
+
