@@ -1,7 +1,10 @@
 package Text::Query::Simple;
-require 5.005;
 
-$VERSION=0.02;
+BEGIN {
+  require 5.005;
+}
+
+$VERSION=0.03;
 
 use strict;
 use re qw/eval/;
@@ -237,9 +240,16 @@ Slightly faster than C<MATCH> under these circumstances.
 
 =back
 
+=head1 RESTRICTIONS
+
+This module requires Perl 5.005 or higher due to the use of evaluated
+expressions in regexes
+
 =head1 AUTHOR
 
 Eric Bohlman (ebohlman@netcom.com)
+
+=head1 CREDITS
 
 The parse_tokens routine was adapted from the parse_line routine in 
 Text::Parsewords.
@@ -247,6 +257,6 @@ Text::Parsewords.
 =head1 COPYRIGHT
 
 Copyright (c) 1998 Eric Bohlman. All rights reserved.
-This program is free software; you can redistribute it and/or modify
+This program is free software; you can redistribute and/or modify
 it under the same terms as Perl itself.
 =cut
